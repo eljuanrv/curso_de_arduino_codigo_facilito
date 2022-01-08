@@ -55,3 +55,74 @@ void loop() {
   delay(1000)
 }
 ```
+
+## Variables
+
+- enteros: int (type name = val;)
+- flotante: float 6/7 digitos
+- double: 15 digitos
+- boolean: true o false
+- char: codigo ASCII
+- byte: 0-255
+
+## Operadores
+- Aritmeticos:{+ - * / = %}
+- Comparación: { >= <= == != > <}
+- Booleanos: {&& || !}
+- Compuestos {++ -- -= += *= /= %=}
+
+## Variables Datos
+- string (tipo de dato y clase): ```ino string H = "Hola"; ```
+- array: ```ino int a[] = 10 ``` se manejan atravez de un indice
+- void: ```ino void setup() {} ``` tipo de dato vacio o sin retorno
+
+## Simulacion de Operadores
+- [Simulacion](https://www.tinkercad.com/things/7R1S8E5HIRT)
+
+**Primer Programa**
+```ino 
+// Declaracioin de variables
+
+int res;
+float result;
+byte var1 = 10;
+byte var2 = 8;
+int del = 1000;
+float v1 = 10;
+int v2 = 8;
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);// Serial. begin(9600); Esta instrucción le indica al Arduino que inicie comunicación con la computadora (o cualquier dispositivo conectado a los pines RX y TX) con una velocidad de comunicación serial de 9600 bits por segundo (baudios) 
+  pinMode(13, OUTPUT);
+
+  // suma
+  res = var1 + var2;
+  Serial.println(res);
+  
+  // resta
+  res = var1 - var2;
+  Serial.println(res);
+  
+  // multiplicacion
+  res = var1 * var2;
+  Serial.println(res);
+  
+  //divición
+  result = v1 / v2;
+  Serial.println(result);
+  
+  // modulo
+  res = var1 % var2;
+  Serial.println(res);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  digitalWrite(13, HIGH); //turn the led on
+  delay(del);
+  digitalWrite(13, LOW); //turn the led of
+  delay(del);
+}
+```
+
