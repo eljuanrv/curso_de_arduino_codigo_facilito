@@ -125,4 +125,70 @@ void loop() {
   delay(del);
 }
 ```
+## Condicionales
+
+- if else
+```ino
+// Declaracioin de variables
+
+float temp = 32;
+int del = 1000;
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);// Serial. begin(9600); Esta instrucción le indica al Arduino que inicie comunicación con la computadora (o cualquier dispositivo conectado a los pines RX y TX) con una velocidad de comunicación serial de 9600 bits por segundo (baudios) 
+  pinMode(13, OUTPUT);
+  
+  if (temp >= 32) {
+    Serial.println("Temperatura alta");
+    digitalWrite(13, LOW);
+  } else {
+  	Serial.println("Temperatura aceptable");
+    digitalWrite(13, HIGH);
+  }
+```
+- switch
+```ino
+// Declaracioin de variables
+
+int temp = 22; //el switch solo trabaja con int o char
+int del = 1000;
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);// Serial. begin(9600); Esta instrucción le indica al Arduino que inicie comunicación con la computadora (o cualquier dispositivo conectado a los pines RX y TX) con una velocidad de comunicación serial de 9600 bits por segundo (baudios) 
+  pinMode(13, OUTPUT);
+  pinMode(12, OUTPUT);
+  pinMode(11, OUTPUT);
+  pinMode(8, OUTPUT);
+  
+  switch (temp){
+    case 22 :
+    Serial.println("La temperaturaes de 22 grados");
+    digitalWrite(13, HIGH);
+    break;
+    
+    case 28:
+    Serial.println("La temperaturaes de 28 grados");
+    digitalWrite(12, HIGH);
+    break;
+    
+    case 32:
+    Serial.println("La temperaturaes de 32 grados");
+    digitalWrite(11, HIGH);
+    break;
+    
+    case 5:
+    Serial.println("La temperaturaes de 5 grados");
+    digitalWrite(8, HIGH);
+    break;
+  }
+
+}
+
+void loop() {
+
+}
+```
+
 
