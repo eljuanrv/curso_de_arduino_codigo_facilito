@@ -191,4 +191,110 @@ void loop() {
 }
 ```
 
+## Estructuras Iterativas
+- for
+```ino
+int pinLed = 11;
+
+void setup(){
+  Serial.begin(9600);
+  pinMode(pinLed, OUTPUT);
+}
+
+void loop(){
+  for(int i=0; i<255; i++){
+    analogWrite(pinLed, i);
+    delay(10);
+  }
+}
+
+```
+
+- while
+```ino
+
+int pinLed2=10;
+
+void setup(){
+  Serial.begin(9600);
+  pinMode(pinLed2, OUTPUT);
+}
+
+void loop(){
+
+  int var =0;
+  while(var<255){
+    analogWrite(pinLed2, var);
+    var++;
+  }
+}
+```
+
+- do while
+
+```ìno
+
+int pinLed2=10;
+
+void setup(){
+  Serial.begin(9600);
+  pinMode(pinLed2, OUTPUT);
+}
+
+void loop(){
+
+  int var =0;
+  do {
+    analogWrite(pinLed2, var);
+    var++;
+  } while(var<255);
+}
+```
+
+# Conceptos Basicos de Electrónica
+## Electronica Analogica
+- Variacion en el tiempo
+- Cualquier numero dentro de un rengo
+- Parametros
+
+**Componentes**
+- Resistencias(limita corriente)
+- Condensadores(almacena corriente)
+- Inductores(fuerzas FEM)
+- Diodos(Rectificadores de corriente)
+- Transistores bjt npn, mos
+
+## Electronica Digital
+- Valores discretos
+- Circuitos combinacionales
+- Circuitos secuenciales
+
+## Ley de OHM
+- V=RI
+
+# Interactuando con Arduino
+
+## Push Button
+```ino
+
+int pinLed2=2;
+int pinButton=7;
+
+void setup(){
+  Serial.begin(9600);
+  pinMode(pinLed2, OUTPUT);
+  pinMode(pinButton, INPUT);
+}
+
+void loop(){
+  int BOTON;
+  BOTON = digitalRead(pinButton);
+  if(BOTON == HIGH){
+  	digitalWrite(pinLed2,HIGH);
+  } else{
+  	digitalWrite(pinLed2, LOW);
+  }
+  delay(15);
+}
+```
 
