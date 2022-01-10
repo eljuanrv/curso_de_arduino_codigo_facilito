@@ -298,3 +298,36 @@ void loop(){
 }
 ```
 
+Mantener la señal del boton
+```ino
+byte ledP =13;
+byte button =2;
+byte buttonState =0;
+byte buttonStateBefore =0;
+
+int salida=0;
+
+void setup(){
+	pinMode(ledP, OUTPUT);
+	pinMode(buttonState, OUTPPUT);
+}
+
+void loop(){
+	buttonState = digitalRead(button);
+
+	if((buttonState == HIGH) && (buttonStateBefore == LOW)){
+	salida =1 - salida;
+	delay(20); // para que la señal del boton se estabilice
+
+	}
+
+	buttonStateBefore = buttonState;
+
+	if(salida == 1){
+		digitalWrite(pinL, HIGH);
+	} else{
+		digitalWrite(pinL, LOW);
+	}
+}
+
+```
